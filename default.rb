@@ -23,7 +23,6 @@ accounts.each do |id, from|
 
   file "/home/#{id}/.ssh/authorized_keys" do
     owner u['id']
-    #group u['id']
     mode 0600
     keys = u['key'].kind_of?(Array) ? u['key'].join("\n") : u['key']
     content keys
